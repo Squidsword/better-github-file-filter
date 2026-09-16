@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Better GitHub File Filter",
+  "version": "0.1.0",
+  "description": "Splits the PR file filter's extension buckets by full compound extension (e.g. .tsx vs .test.tsx). Works on github.com and GitHub Enterprise.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "GitHub Compound File Filter",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*/pull/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
